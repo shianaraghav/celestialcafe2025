@@ -6,7 +6,7 @@ from pymongo import MongoClient
 import pandas as pd
 
 # Replace this with your actual MongoDB Atlas connection string
-MONGO_URI = "mongodb+srv://sr_db_user:shiana@shianaraghav.ihc9zgc.mongodb.net/?appName=shianaraghav"
+MONGO_URI = st.secrets["MONGO_URI"]
 
 # Connect to MongoDB Atlas
 mongooncloud = MongoClient(MONGO_URI)
