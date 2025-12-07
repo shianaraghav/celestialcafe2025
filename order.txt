@@ -1,0 +1,40 @@
+Name: Shiana
+Date: 2025-11-30
+Selected Flavors: Stellar Strawberry, Supernova Strawberry, Solar Strawberry, Stardust Strawberry
+Selected Pearls: Strawberry Tapioca Pearls
+Selected Size: Small
+Selected Toppings: Whipped Cream, Caramel Swirl
+Total Cost: $29.00
+--------------------------------------------------
+Name: Shiana
+Date: 2025-11-30
+Selected Flavors: Stellar Strawberry, Supernova Strawberry, Solar Strawberry, Stardust Strawberry
+Selected Pearls: Strawberry Tapioca Pearls
+Selected Size: Small
+Selected Toppings: Whipped Cream, Caramel Swirl
+Total Cost: $29.00
+--------------------------------------------------
+Name: Shyvanthi
+Date: 2025-12-05
+Selected Flavors: Meteor Mango, Lunar Lychee, Lunar Lavender
+Selected Pearls: Lychee Popping Pearls
+Selected Size: Small
+Selected Toppings: None
+Total Cost: $20.00
+--------------------------------------------------
+Name: Rishaan
+Date: 2025-12-07
+Selected Flavors: Meteor Mango, Planetary Peach, Celestial Cherry, Lunar Lychee, Stellar Strawberry, Solar Strawberry, Citrus Comet, Nebula Nectar, Supernova Strawberry, Interstellar Iced Tea, Galactic Green Tea, Nebula Nectarine, Meteor Mango Melon, Stardust Strawberry, Lunar Lavender, Asteroid Apple
+Selected Pearls: Lychee Popping Pearls, Coconut Jelly, Mango Jelly, Bluberry Jelly, Grape Jelly, Rainbow Jelly, Passionfruit Jelly, Lychee Jelly, Peach Jelly, Strawberry Jelly, Matcha Jelly, Strawberry Popping Pearls, Rainbow Popping Pearls, Pineapple Jelly, Coconut Popping Pearls, Mango Popping Pearls, Grape Popping Pearls, Peach Popping Pearls, Pineapple Popping Pearls, Passionfruit Popping Pearls, Matcha Popping Pearls, Strawberry Tapioca Pearls, Bluberry Popping Pearls, Grape Tapioca Pearls, Passionfruit Tapioca Pearls, Bluberry Tapioca Pearls, Lychee Tapioca Pearls, Peach Tapioca Pearls, Mango Tapioca Pearls, Pineapple Tapioca Pearls, Matcha Tapioca Pearls, Coconut Tapioca Pearls, Classic Tapioca Pearls, Caramel Tapioca Pearls, Vanilla Tapioca Pearls
+Selected Size: Extra Large
+Selected Toppings: Caramel Swirl, Rainbow Sprinkles, Coconut Shavings, Matcha Powder, Jelly Cubes, Fruit Bits, Whipped Cream, Chocolate Drizzle
+Total Cost: $172.00
+--------------------------------------------------
+Name: Raghav
+Date: 2025-12-07
+Selected Flavors: Planetary Pineapple
+Selected Pearls: Classic Tapioca Pearls, Chocolate Tapioca Pearls
+Selected Size: Extra Large
+Selected Toppings: Chocolate Drizzle
+Total Cost: $17.00
+--------------------------------------------------

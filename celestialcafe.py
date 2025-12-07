@@ -2,6 +2,18 @@ import streamlit as st
 from collections import defaultdict
 import pandas as pd
 from datetime import datetime
+from pymongo import MongoClient
+import pandas as pd
+
+# Replace this with your actual MongoDB Atlas connection string
+MONGO_URI = "mongodb+srv://sr_db_user:shiana@shianaraghav.ihc9zgc.mongodb.net/?appName=shianaraghav"
+
+# Connect to MongoDB Atlas
+mongooncloud = MongoClient(MONGO_URI)
+
+# Select database and collection
+db = mongooncloud["celestialcafe"]
+collection = db["customers"]
 
 # Inject custom CSS
 page_bg = """
@@ -18,7 +30,7 @@ page_bg = """
 st.markdown(page_bg, unsafe_allow_html=True)
 
 # --- Tab Navigation ---
-tabs = st.tabs(["Order Boba Tea", "About", "Contact", "Search Orders", "📊 Dashboard"])
+tabs = st.tabs(["Order Boba Tea", "About", "Contact", "Search Orders", "📊 Dashboard", "Review Orders"])
 
 # --- Order Boba Tea Tab ---
 with tabs[0]:
@@ -103,6 +115,16 @@ with tabs[0]:
 
     st.subheader("Order Confirmation")
     if st.button("Confirm Order"):
+        document = {
+            "cname": name,
+            "date": str(date),
+            "size": selected_size,
+            "selected_flavors": selected_flavors,
+            "selected_pearls": selected_pearls,
+            "selected_toppings": selected_toppings,
+            "totalcost": int(total_cost)
+        }
+        result = collection.insert_one(document)
         st.success("Your order has been confirmed! Enjoy your cosmic boba tea experience! 🌌🧋 Thank you for choosing Celestial Cafe! Your boba tea will be ready shortly.")
         with open("order.txt", "a") as order:
             order.write(f"Name: {name}\n")
@@ -203,4 +225,15 @@ with tabs[4]:
 
     except FileNotFoundError:
         st.warning("No orders have been placed yet. Dashboard data unavailable.")
+# --- Review Orders Tab ---
+with tabs[5]:
+    # Read all documents
+    documents = collection.find()
+
+    # Convert JSON to DataFrame
+    df = pd.DataFrame(documents)
+
+    # Display as table
+    st.title("🧋 Review All Boba Tea Orders")
+    st.dataframe(df)    # Interactive table
 # --- End of code ---
