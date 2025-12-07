@@ -30,7 +30,7 @@ page_bg = """
 st.markdown(page_bg, unsafe_allow_html=True)
 
 # --- Tab Navigation ---
-tabs = st.tabs(["Order Boba Tea", "About", "Contact", "Search Orders", "📊 Dashboard", "Review Orders"])
+tabs = st.tabs(["📋 Order Boba Tea", "📝 About", "📩 Contact", "Search Orders", "📊 Dashboard", "🧋 Review Orders"])
 
 # --- Order Boba Tea Tab ---
 with tabs[0]:
@@ -126,26 +126,26 @@ with tabs[0]:
         }
         result = collection.insert_one(document)
         st.success("Your order has been confirmed! Enjoy your cosmic boba tea experience! 🌌🧋 Thank you for choosing Celestial Cafe! Your boba tea will be ready shortly.")
-        with open("order.txt", "a") as order:
-            order.write(f"Name: {name}\n")
-            order.write(f"Date: {date}\n")
-            order.write(f"Selected Flavors: {', '.join(selected_flavors) if selected_flavors else 'None'}\n")
-            order.write(f"Selected Pearls: {', '.join(selected_pearls) if selected_pearls else 'None'}\n")
-            order.write(f"Selected Size: {selected_size}\n")
-            order.write(f"Selected Toppings: {', '.join(selected_toppings) if selected_toppings else 'None'}\n")
-            order.write(f"Total Cost: ${total_cost:.2f}\n")
-            order.write("--------------------------------------------------\n")
+        #with open("order.txt", "a") as order:
+        #    order.write(f"Name: {name}\n")
+         #   order.write(f"Date: {date}\n")
+          #  order.write(f"Selected Flavors: {', '.join(selected_flavors) if selected_flavors else 'None'}\n")
+           # order.write(f"Selected Pearls: {', '.join(selected_pearls) if selected_pearls else 'None'}\n")
+            #order.write(f"Selected Size: {selected_size}\n")
+            #order.write(f"Selected Toppings: {', '.join(selected_toppings) if selected_toppings else 'None'}\n")
+            #order.write(f"Total Cost: ${total_cost:.2f}\n")
+            #order.write("--------------------------------------------------\n")
     else:
         st.info("Click the button to confirm your order.")
 
 # --- About Tab ---
 with tabs[1]:
-    st.title("About Celestial Cafe")
+    st.title("📝 About Celestial Cafe")
     st.write("Celestial Cafe brings you cosmic flavors and a stellar experience. Our boba tea is crafted with the finest ingredients from across the galaxy!")
 
 # --- Contact Tab ---
 with tabs[2]:
-    st.title("Contact Us")
+    st.title("📩 Contact Us")
     st.write("Questions or feedback? Reach out to us at contact@celestialcafe.com or visit us at our cosmic location!")
 
 # --- Search Orders Tab ---
