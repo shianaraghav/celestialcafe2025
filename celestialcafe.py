@@ -6,7 +6,8 @@ from pymongo import MongoClient
 import pandas as pd
 
 # Replace this with your actual MongoDB Atlas connection string
-MONGO_URI = st.secrets["MONGO_URI"]
+#MONGO_URI = st.secrets["MONGO_URI"]
+MONGO_URI = "mongodb+srv://sr_db_user:shiana@shianaraghav.ihc9zgc.mongodb.net/?appName=shianaraghav"
 
 # Connect to MongoDB Atlas
 mongooncloud = MongoClient(MONGO_URI)
@@ -156,29 +157,24 @@ with tabs[3]:
 
     if search_name:
         try:
-            with open("order.txt", "r") as f:
-                lines=f.readlines()
-            orders = []
-            current_order = []
-
-            for line in lines:
-                if "--------------------------------------------------" in line:
-                    if current_order:
-                        orders.append("".join(current_order))
-                        current_order = []
-                else:
-                    current_order.append(line)
-
-            matching_orders = [order for order in orders if f"Name: {search_name}" in order]
-
+            # Search for orders in MongoDB with matching customer name
+            matching_orders = list(collection.find({"cname": search_name}))
+            
             if matching_orders:
                 st.success(f"Found {len(matching_orders)} order(s) for **{search_name}**:")
                 for i, order in enumerate(matching_orders, 1):
-                    st.text(f"Order #{i}\n{order}")
+                    with st.expander(f"Order #{i} - {order.get('date', 'N/A')}"):
+                        st.write(f"**Name:** {order.get('cname', 'N/A')}")
+                        st.write(f"**Date:** {order.get('date', 'N/A')}")
+                        st.write(f"**Selected Flavors:** {', '.join(order.get('selected_flavors', [])) if order.get('selected_flavors') else 'None'}")
+                        st.write(f"**Selected Pearls:** {', '.join(order.get('selected_pearls', [])) if order.get('selected_pearls') else 'None'}")
+                        st.write(f"**Selected Size:** {order.get('size', 'N/A')}")
+                        st.write(f"**Selected Toppings:** {', '.join(order.get('selected_toppings', [])) if order.get('selected_toppings') else 'None'}")
+                        st.write(f"**Total Cost:** ${order.get('totalcost', 0):.2f}")
             else:
                 st.warning("No orders found for that name.")
-        except FileNotFoundError:
-            st.error("Order file not found.")
+        except Exception as e:
+            st.error(f"Error searching orders: {str(e)}")
 
 # --- Dashboard Tab ---
 with tabs[4]:
