@@ -20,7 +20,8 @@ collection = db["customers"]
 page_bg = """
 <style>
 .stApp {
-    background-color: #123456; 
+    background-color: #0b7285; 
+    color: white;
     background-image: 
         "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%25%22 height=%22100%25%22><text x=%225%25%22 y=%2210%25%22 font-size=%2240%22>🧋</text><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22>🐼</text><text x=%2270%25%22 y=%2230%25%22 font-size=%2240%22>🦘</text><text x=%2220%25%22 y=%2270%25%22 font-size=%2240%22>✨</text><text x=%2280%25%22 y=%2280%25%22 font-size=%2240%22>🌸</text></svg>')";
     background-repeat: repeat;
