@@ -35,14 +35,32 @@ page_bg = """
 
 .stApp .stTextInput input,
 .stApp .stDateInput input,
-.stApp .stSelectbox [data-baseweb="select"] div,
-.stApp .stMultiSelect [data-baseweb="select"] div,
 .stApp .stTextArea textarea,
 .stApp .stButton button,
 .stApp .stDownloadButton button {
     color: black !important;
     background-color: white !important;
     border: 1px solid #d9d9d9 !important;
+}
+
+.stApp .stSelectbox [data-baseweb="select"] {
+    background-color: white !important;
+    color: black !important;
+}
+
+.stApp .stSelectbox [data-baseweb="select"] > div {
+    background-color: white !important;
+    color: black !important;
+}
+
+.stApp .stSelectbox [data-baseweb="select"] span,
+.stApp .stSelectbox [data-baseweb="select"] div[role="button"] {
+    color: black !important;
+}
+
+.stApp .stMultiSelect [data-baseweb="select"] div {
+    color: black !important;
+    background-color: white !important;
 }
 
 .stApp [data-testid="stBarChart"] text {
