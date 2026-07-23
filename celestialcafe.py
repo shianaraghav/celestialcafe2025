@@ -37,18 +37,21 @@ page_bg = """
 .stApp .stDateInput input,
 .stApp .stSelectbox [data-baseweb="select"] div,
 .stApp .stMultiSelect [data-baseweb="select"] div,
-.stApp .stTextArea textarea {
+.stApp .stTextArea textarea,
+.stApp .stButton button,
+.stApp .stDownloadButton button {
     color: black !important;
+    background-color: white !important;
+    border: 1px solid #d9d9d9 !important;
 }
 
 .stApp [data-testid="stBarChart"] text {
     fill: black !important;
 }
 
-.stApp button[kind="primary"] {
-    color: black !important;
-    background-color: #f5f5f5 !important;
-    border: 1px solid #d9d9d9 !important;
+.stApp .stButton button:hover,
+.stApp .stDownloadButton button:hover {
+    background-color: #f2f2f2 !important;
 }
 </style>
 """
