@@ -20,12 +20,35 @@ collection = db["customers"]
 page_bg = """
 <style>
 .stApp {
-    background-color: #0b7285; 
+    background-color: #008080; 
     color: white;
     background-image: 
         "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%25%22 height=%22100%25%22><text x=%225%25%22 y=%2210%25%22 font-size=%2240%22>🧋</text><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22>🐼</text><text x=%2270%25%22 y=%2230%25%22 font-size=%2240%22>🦘</text><text x=%2220%25%22 y=%2270%25%22 font-size=%2240%22>✨</text><text x=%2280%25%22 y=%2280%25%22 font-size=%2240%22>🌸</text></svg>')";
     background-repeat: repeat;
     background-size: 200px 200px; /* Adjust size of emoji grid */
+}
+
+.stApp h1, .stApp h2, .stApp h3, .stApp p, .stApp li,
+.stApp label, .stApp .stTabs [role="tab"], .stApp .stMetric {
+    color: white !important;
+}
+
+.stApp .stTextInput input,
+.stApp .stDateInput input,
+.stApp .stSelectbox [data-baseweb="select"] div,
+.stApp .stMultiSelect [data-baseweb="select"] div,
+.stApp .stTextArea textarea {
+    color: black !important;
+}
+
+.stApp [data-testid="stBarChart"] text {
+    fill: black !important;
+}
+
+.stApp button[kind="primary"] {
+    color: black !important;
+    background-color: #f5f5f5 !important;
+    border: 1px solid #d9d9d9 !important;
 }
 </style>
 """
@@ -127,7 +150,7 @@ with tabs[0]:
             "totalcost": int(total_cost)
         }
         result = collection.insert_one(document)
-        st.success("Your order has been confirmed! Enjoy your cosmic boba tea experience! 🌌🧋 Thank you for choosing Celestial Cafe! Your boba tea will be ready shortly.")
+        st.success("Your order has been confirmed! Enjoy your cosmic boba tea experience! 🌌🧋 Thank you for choosing Celestial Cafe! Your boba tea will be ready in a around 10-15 minutes. See you soon!")
         #with open("order.txt", "a") as order:
         #    order.write(f"Name: {name}\n")
          #   order.write(f"Date: {date}\n")
@@ -143,12 +166,12 @@ with tabs[0]:
 # --- About Tab ---
 with tabs[1]:
     st.title("📝 About Celestial Cafe")
-    st.write("Celestial Cafe brings you cosmic flavors and a stellar experience. Our boba tea is crafted with the finest ingredients from across the galaxy!")
+    st.write("Celestial Cafe brings you cosmic flavors and a stellar experience. Our boba tea is crafted with the finest ingredients from across the galaxy! We are committed to providing a unique and delightful experience for all our customers. Every great journey starts with the perfect fuel, and at our café, that journey begins with our fresh boba. Throughout the day, we prepare our tapioca pearls in small batches to ensure they're always soft, chewy, and ready for liftoff. We carefully cook premium tapioca pearls until they reach their signature texture, then rinse them before soaking them in our rich brown sugar syrup. This allows each pearl to absorb a deep caramel-like sweetness while maintaining the satisfying chew that makes every sip memorable. Just as every mission through the cosmos requires precision, we take our time with every batch of boba. The cooking and soaking process is carefully monitored to achieve the perfect balance of flavor and texture, ensuring that every pearl is consistently fresh and delicious. We never rush the process because we believe the best boba is worth the wait. Whether you're exploring a new favorite drink or returning to a classic, our freshly made boba is designed to complement every beverage on our menu. From its glossy appearance to its warm brown sugar flavor and signature chew, every pearl is crafted to make your drink feel truly out of this world. Thank you for joining us on this flavorful space adventure—we're excited to be part of your next orbit around great boba.")
 
 # --- Contact Tab ---
 with tabs[2]:
     st.title("📩 Contact Us")
-    st.write("Questions or feedback? Reach out to us at contact@celestialcafe.com or visit us at our cosmic location!")
+    st.write("Questions or feedback? Reach out to us at shianaraghav@gmail.com or visit us at our cosmic location!")
 
 # --- Search Orders Tab ---
 with tabs[3]:
